@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OpenNetlistView::MainWindow</class>
+ <widget class="QMainWindow" name="OpenNetlistView::MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1234</width>
+    <height>812</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OpenNetlistView</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pOpenFile">
+        <property name="toolTip">
+         <string>Open File...</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/open.png</normaloff>:/icons/open.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pZoomIn">
+        <property name="toolTip">
+         <string>Zoom In</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/zoom-in.png</normaloff>:/icons/zoom-in.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pZoomOut">
+        <property name="toolTip">
+         <string>Zoom Out</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/zoom-out.png</normaloff>:/icons/zoom-out.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pZoomToFit">
+        <property name="toolTip">
+         <string>Zoom To Fit</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/zoom-fit.png</normaloff>:/icons/zoom-fit.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pToggleNames">
+        <property name="toolTip">
+         <string>Toogle Names</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/toggle-off.png</normaloff>:/icons/toggle-off.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pSearchNode">
+        <property name="toolTip">
+         <string>Search Node...</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/search-interface-symbol.png</normaloff>:/icons/search-interface-symbol.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pHierarchy">
+        <property name="toolTip">
+         <string>Toogle Hierarchy View</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/icons/icons.qrc">
+          <normaloff>:/icons/tree-view.png</normaloff>:/icons/tree-view.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QTreeView" name="treeHierarchy">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="OpenNetlistView::QNetlistTabWidget" name="tabNetlists">
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+        <property name="tabsClosable">
+         <bool>true</bool>
+        </property>
+        <property name="movable">
+         <bool>true</bool>
+        </property>
+        <property name="tabBarAutoHide">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1234</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export .svg from</string>
+     </property>
+     <addaction name="aExportSchematic"/>
+     <addaction name="aExportSelected"/>
+    </widget>
+    <widget class="QMenu" name="menuLoadExample">
+     <property name="title">
+      <string>Load Example</string>
+     </property>
+     <addaction name="aLoadAdder"/>
+     <addaction name="aLoadAdderSystem"/>
+     <addaction name="aLoadAdderTech"/>
+    </widget>
+    <addaction name="aOpenFile"/>
+    <addaction name="menuLoadExample"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+    <addaction name="aSettings"/>
+    <addaction name="separator"/>
+    <addaction name="aExit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="aZoomIn"/>
+    <addaction name="aZoomOut"/>
+    <addaction name="aZoomToFit"/>
+    <addaction name="separator"/>
+    <addaction name="aSearchNode"/>
+    <addaction name="separator"/>
+    <addaction name="aToogleNames"/>
+    <addaction name="separator"/>
+    <addaction name="actionClearHighlight"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="aDocumentation"/>
+    <addaction name="separator"/>
+    <addaction name="aAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuInfo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="aOpenFile">
+   <property name="icon">
+    <iconset resource="../resources/icons/icons.qrc">
+     <normaloff>:/icons/open.png</normaloff>:/icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open File...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="aExportSchematic">
+   <property name="text">
+    <string>Schematic...</string>
+   </property>
+  </action>
+  <action name="aSettings">
+   <property name="text">
+    <string>Settings...</string>
+   </property>
+  </action>
+  <action name="aExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="aZoomIn">
+   <property name="icon">
+    <iconset resource="../resources/icons/icons.qrc">
+     <normaloff>:/icons/zoom-in.png</normaloff>:/icons/zoom-in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="aZoomOut">
+   <property name="icon">
+    <iconset resource="../resources/icons/icons.qrc">
+     <normaloff>:/icons/zoom-out.png</normaloff>:/icons/zoom-out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="aZoomToFit">
+   <property name="icon">
+    <iconset resource="../resources/icons/icons.qrc">
+     <normaloff>:/icons/zoom-fit.png</normaloff>:/icons/zoom-fit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom to Fit</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Shift+F</string>
+   </property>
+  </action>
+  <action name="aSearchNode">
+   <property name="icon">
+    <iconset resource="../resources/icons/icons.qrc">
+     <normaloff>:/icons/search-interface-symbol.png</normaloff>:/icons/search-interface-symbol.png</iconset>
+   </property>
+   <property name="text">
+    <string>Search Node ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="aToogleNames">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Toogle Names</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="aDocumentation">
+   <property name="text">
+    <string>Documentation...</string>
+   </property>
+  </action>
+  <action name="aAbout">
+   <property name="text">
+    <string>About...</string>
+   </property>
+  </action>
+  <action name="actionClearHighlight">
+   <property name="text">
+    <string>Clear Highlight</string>
+   </property>
+  </action>
+  <action name="aExportSelected">
+   <property name="text">
+    <string>Selected...</string>
+   </property>
+  </action>
+  <action name="aItemsMoveable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Items Moveable</string>
+   </property>
+  </action>
+  <action name="aLoadAdder">
+   <property name="text">
+    <string>adder.rtl.json</string>
+   </property>
+  </action>
+  <action name="aLoadAdderSystem">
+   <property name="text">
+    <string>addersystem.rtl.json</string>
+   </property>
+  </action>
+  <action name="aLoadAdderTech">
+   <property name="text">
+    <string>adder.tech.json</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>OpenNetlistView::QNetlistTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header location="global">qnetlisttabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resources/icons/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>aExit</sender>
+   <signal>triggered()</signal>
+   <receiver>OpenNetlistView::MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>616</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pHierarchy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>treeHierarchy</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,237 @@
+{
+  "creator": "Yosys 0.39+1 (git sha1 b3124f30e, clang++ 14.0.0-1ubuntu1.1 -fPIC -Os)",
+  "modules": {
+    "MAdderCore": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": ""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "en": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "cout_out": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        }
+      },
+      "cells": {
+        "$add$/systems/refdesign/hw/v_out/addcore.v:19$4": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ "1" ],
+            "Y": [ 13, 14, 15, 16 ]
+          }
+        },
+        "$procdff$15": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 17, 18, 19, 20 ],
+            "Q": [ 5, 6, 7, 8 ]
+          }
+        },
+        "$procdff$16": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 21, 22, 23, 24 ],
+            "Q": [ 9, 10, 11, 12 ]
+          }
+        },
+        "$procmux$10": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 25, 26, 27, 28 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 21, 22, 23, 24 ]
+          }
+        },
+        "$procmux$13": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ 13, 14, 15, 16 ],
+            "S": [ 4 ],
+            "Y": [ 25, 26, 27, 28 ]
+          }
+        },
+        "$procmux$7": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 17, 18, 19, 20 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\counter_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 21, 22, 23, 24 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "$0\\cout_out[3:0]": {
+          "hide_name": 1,
+          "bits": [ 17, 18, 19, 20 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "$add$/systems/refdesign/hw/v_out/addcore.v:19$4_Y": {
+          "hide_name": 1,
+          "bits": [ 13, 14, 15, 16 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "counter_reg": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "counter_reg_next": {
+          "hide_name": 0,
+          "bits": [ 25, 26, 27, 28 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "cout_out": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "cout_out_next": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "en": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": ""
+          }
+        }
+      }
+    }
+  }
+}

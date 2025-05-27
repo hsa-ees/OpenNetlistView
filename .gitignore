@@ -99,3 +99,12 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+build/
+/*.json
+
+docs/doxygen
+docs/user_doc/build
+
+appimg-build
+*.AppImage

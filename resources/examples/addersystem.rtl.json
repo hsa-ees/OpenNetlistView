@@ -1,0 +1,578 @@
+{
+  "creator": "Yosys 0.39+1 (git sha1 b3124f30e, clang++ 14.0.0-1ubuntu1.1 -fPIC -Os)",
+  "modules": {
+    "MAdderCore": {
+      "attributes": {
+        "src":  ""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "en": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "cout_out": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        }
+      },
+      "cells": {
+        "$add$/systems/refdesign/hw/v_out/piconut.v:44$4": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ "1" ],
+            "Y": [ 13, 14, 15, 16 ]
+          }
+        },
+        "$procdff$31": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src":  ""
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 17, 18, 19, 20 ],
+            "Q": [ 5, 6, 7, 8 ]
+          }
+        },
+        "$procdff$32": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src":  ""
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 21, 22, 23, 24 ],
+            "Q": [ 9, 10, 11, 12 ]
+          }
+        },
+        "$procmux$21": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 17, 18, 19, 20 ]
+          }
+        },
+        "$procmux$24": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 25, 26, 27, 28 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 21, 22, 23, 24 ]
+          }
+        },
+        "$procmux$27": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ 13, 14, 15, 16 ],
+            "S": [ 4 ],
+            "Y": [ 25, 26, 27, 28 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\counter_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 21, 22, 23, 24 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "$0\\cout_out[3:0]": {
+          "hide_name": 1,
+          "bits": [ 17, 18, 19, 20 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "$add$/systems/refdesign/hw/v_out/piconut.v:44$4_Y": {
+          "hide_name": 1,
+          "bits": [ 13, 14, 15, 16 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "counter_reg": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "counter_reg_next": {
+          "hide_name": 0,
+          "bits": [ 25, 26, 27, 28 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "cout_out": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "cout_out_next": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "en": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src":  ""
+          }
+        }
+      }
+    },
+    "MAdderMemu": {
+      "attributes": {
+        "src":  ""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "en": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "cout_out": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        }
+      },
+      "cells": {
+        "$add$/systems/refdesign/hw/v_out/piconut.v:80$9": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ "1" ],
+            "Y": [ 13, 14, 15, 16 ]
+          }
+        },
+        "$procdff$29": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src":  ""
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 17, 18, 19, 20 ],
+            "Q": [ 5, 6, 7, 8 ]
+          }
+        },
+        "$procdff$30": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src":  ""
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 21, 22, 23, 24 ],
+            "Q": [ 9, 10, 11, 12 ]
+          }
+        },
+        "$procmux$12": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 17, 18, 19, 20 ]
+          }
+        },
+        "$procmux$15": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 25, 26, 27, 28 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 21, 22, 23, 24 ]
+          }
+        },
+        "$procmux$18": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12 ],
+            "B": [ 13, 14, 15, 16 ],
+            "S": [ 4 ],
+            "Y": [ 25, 26, 27, 28 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\counter_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 21, 22, 23, 24 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "$0\\cout_out[3:0]": {
+          "hide_name": 1,
+          "bits": [ 17, 18, 19, 20 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "$add$/systems/refdesign/hw/v_out/piconut.v:80$9_Y": {
+          "hide_name": 1,
+          "bits": [ 13, 14, 15, 16 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "counter_reg": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "counter_reg_next": {
+          "hide_name": 0,
+          "bits": [ 25, 26, 27, 28 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "cout_out": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "cout_out_next": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "en": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src":  ""
+          }
+        }
+      }
+    },
+    "MPiconut": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src":  ""
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "enable": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "count0": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        },
+        "count1": {
+          "direction": "output",
+          "bits": [ 9, 10, 11, 12 ]
+        }
+      },
+      "cells": {
+        "adder_core": {
+          "hide_name": 0,
+          "type": "MAdderCore",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "clk": "input",
+            "cout_out": "output",
+            "en": "input",
+            "reset": "input"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "cout_out": [ 5, 6, 7, 8 ],
+            "en": [ 4 ],
+            "reset": [ 3 ]
+          }
+        },
+        "adder_memu": {
+          "hide_name": 0,
+          "type": "MAdderMemu",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src":  ""
+          },
+          "port_directions": {
+            "clk": "input",
+            "cout_out": "output",
+            "en": "input",
+            "reset": "input"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "cout_out": [ 9, 10, 11, 12 ],
+            "en": [ 4 ],
+            "reset": [ 3 ]
+          }
+        }
+      },
+      "netnames": {
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "count0": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "count1": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "enable": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src":  ""
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src":  ""
+          }
+        }
+      }
+    }
+  }
+}

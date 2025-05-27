@@ -1,0 +1,21 @@
+{
+  "modules": {
+    "MTop": {
+      "cells": {
+        "$procdff$16": {
+          "hide_name": 1,
+          "type": "$dff",
+          "attributes": {
+            "src": "/data/test/test.v"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {}
+        }
+      }
+    }
+  }
+}

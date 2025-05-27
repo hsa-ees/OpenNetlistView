@@ -1,0 +1,44 @@
+{
+  "modules": {
+    "MTest": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": ""
+      },
+      "ports": {
+        "A": {
+          "direction": "output",
+          "bits": ["0", "0", 2, 3, 6, 7]
+        },
+        "A_two": {
+          "direction": "output",
+          "bits": ["0", "0", 2, 3, 6, 7]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [2, 3]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [6, 7]
+        }
+      },
+      "netnames": {
+        "B": {
+          "hide_name": 0,
+          "bits": [2, 3],
+          "attributes": {
+            "src": ""
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [6, 7],
+          "attributes": {
+            "src": ""
+          }
+        }
+      }
+    }
+  }
+}

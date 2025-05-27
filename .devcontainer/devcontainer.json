@@ -1,0 +1,18 @@
+{
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "diag_viewer",
+    "workspaceFolder": "/home/user/diag_viewer",
+    "name": "diag_container",
+    "shutdownAction": "stopCompose",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                "xaver.clang-format",
+            ]
+        }
+    }
+}

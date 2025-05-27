@@ -1,0 +1,28 @@
+{
+  "modules": {
+    "MTest": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/data/test/test.v"
+      },
+      "ports":{
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "in1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "out1": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        }
+      }
+    }
+  }
+}

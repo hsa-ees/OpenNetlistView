@@ -1,0 +1,67 @@
+{
+  "modules": {
+    "MTest": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/data/test/test.v"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [2]
+        },
+        "in1": {
+          "direction": "input",
+          "bits": [3]
+        },
+        "out1": {
+          "direction": "output",
+          "bits": [4]
+        }
+      },
+      "cells": {
+        "$procdff$16": {
+          "hide_name": 1,
+          "type": "$dff",
+          "attributes": {
+            "src": "/data/test/test.v"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [2],
+            "D": [3],
+            "Q": [4]
+          }
+        }
+      },
+      "netnames": {
+        "clk": {
+          "hide_name": 0,
+          "bits": [2],
+          "attributes": {
+            "src": "/data/test/test.v:2.2-2.5"
+          }
+        },
+
+        "in1": {
+          "hide_name": 0,
+          "bits": [3],
+          "attributes": {
+            "src": "/data/test/test.v:3.2-3.7"
+          }
+        },
+        "out1": {
+          "hide_name": 0,
+          "bits": [4],
+          "attributes": {
+            "src": "/data/test/test.v:4.2-4.5"
+          }
+        }
+      }
+    }
+  }
+}

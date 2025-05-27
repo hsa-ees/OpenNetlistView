@@ -1,0 +1,28 @@
+{
+  "modules": {
+    "MTest": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/data/test/test.v"
+      },
+      "ports": {
+        "I": {
+          "direction": "input",
+          "bits": [2]
+        }
+      }
+    },
+    "LibA": {
+      "attributes": {
+        "src": "/data/lib/../share/yosys/abc.v",
+        "blackbox": "00000000000000000000000000000001"
+      },
+      "ports": {
+        "I2": {
+          "direction": "input",
+          "bits": [2]
+        }
+      }
+    }
+  }
+}

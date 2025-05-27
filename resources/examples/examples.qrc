@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/examples">
+        <file>adder.rtl.json</file>
+        <file>addersystem.rtl.json</file>
+        <file>adder.tech.json</file>
+    </qresource>
+</RCC>

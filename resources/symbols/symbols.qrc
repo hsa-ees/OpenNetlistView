@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/symbols">
+        <file>default.svg</file>
+    </qresource>
+</RCC>

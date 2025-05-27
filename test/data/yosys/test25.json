@@ -1,0 +1,17 @@
+{
+  "modules": {
+    "MTest": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": ""
+      },
+      "ports": {
+        "A": {
+          "direction": "output",
+          "bits": ["1"]
+        }
+      },
+      "netnames": {}
+    }
+  }
+}

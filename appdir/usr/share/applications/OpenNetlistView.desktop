@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=OpenNetlistView
+Comment= A digital schematic viewer
+Exec=OpenNetlistView
+Icon=OpenNetlistView
+Categories=Education;Utility;

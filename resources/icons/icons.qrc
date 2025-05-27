@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>search-interface-symbol.png</file>
+        <file>zoom-fit.png</file>
+        <file>zoom-in.png</file>
+        <file>zoom-out.png</file>
+        <file>open.png</file>
+        <file>tree-view.png</file>
+        <file>toggle-on.png</file>
+        <file>toggle-off.png</file>
+        <file>OpenNetlistView.png</file>
+    </qresource>
+</RCC>
